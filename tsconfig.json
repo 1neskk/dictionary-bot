@@ -1,0 +1,36 @@
+{
+    "ts-node": {
+        "esm": false,
+        "transpileOnly": true,
+        "compilerOptions": {
+            "outDir": "./dist",
+            "typeRoots": [
+                "./node_modules/@types",
+                "./src/@types"
+            ],
+            "target": "es5",
+            "allowJs": true,
+        },
+        "include": [
+            "./src/**/*"
+        ],
+        "exclude": [
+            "./node_modules/**/*",
+        ]
+    },
+    "compilerOptions": {
+        "outDir": "./dist",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/@types"
+        ],
+        "target": "es5",
+        "allowJs": true,
+    },
+    "include": [
+        "./src/**/*"
+    ],
+    "exclude": [
+        "./node_modules/**/*",
+    ]
+}

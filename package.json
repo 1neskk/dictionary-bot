@@ -1,0 +1,22 @@
+{
+  "name": "dictionary-bot",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/commands.js && node dist/index.js",
+    "reload": "node dist/commands.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "author": "nesk",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
