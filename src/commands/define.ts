@@ -23,6 +23,7 @@ export async function execute(interaction: any) {
         const embed = new EmbedBuilder()
             .setColor(0x0099FF)
             .setTitle(`Definition of ${word}`)
+            .setURL(data[0].sourceUrls[0])
             .setDescription(data[0].meanings[0].definitions[0].definition)
             .addFields(
                 { name: "Phonetic", value: phoneticText, inline: false },
