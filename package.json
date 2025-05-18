@@ -4,10 +4,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node dist/commands.js && node dist/index.js",
-    "reload": "node dist/commands.js",
-    "dev": "ts-node src/commands.ts && ts-node src/index.ts"
+    "dev": "ts-node src/commands.ts && ts-node src/index.ts",
+    "build": "echo \"Building...\""
   },
   "author": "nesk",
   "license": "ISC",
