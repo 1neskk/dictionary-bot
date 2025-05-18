@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node src/commands.ts && ts-node src/index.ts",
-    "build": "echo \"Building...\""
+    "build": "npm i && npm i -g ts-node"
   },
   "author": "nesk",
   "license": "ISC",
