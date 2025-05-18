@@ -1,5 +1,7 @@
 import { Client, Collection, Events, GatewayIntentBits } from 'discord.js';
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 
 const token = process.env.TOKEN;
 
@@ -17,8 +19,8 @@ client.once(Events.ClientReady, () => {
 });
 
 client.commands = new Collection();
-//const commandFiles = ['server.js', 'user.js', 'define.js', 'synonym.js', 'antonym.js'];
-const commandFiles = ['server.ts', 'user.ts', 'define.ts', 'synonym.ts', 'antonym.ts'];
+const commandsPath = path.join(__dirname, 'commands');
+const commandFiles = fs.readdirSync(commandsPath).filter((file: any) => file.endsWith('.js') || file.endsWith('.ts'));
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.data.name, command);

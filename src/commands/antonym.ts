@@ -17,7 +17,7 @@ export async function execute(interaction: any) {
         if (!response.ok) {
             throw new Error("Word not found");
         }
-        const data = await response.json();
+        const data: any = await response.json();
         const antonyms = data[0].meanings[0].antonyms || ["No antonyms available"];
 
         const embed = new EmbedBuilder()

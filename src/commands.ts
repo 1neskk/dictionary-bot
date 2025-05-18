@@ -1,5 +1,7 @@
 import { REST, Routes } from 'discord.js';
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 
 const token = process.env.TOKEN;
 const clientId = process.env.CLIENT_ID;
@@ -7,7 +9,8 @@ const clientId = process.env.CLIENT_ID;
 
 const commands = [];
 
-const commandFiles = ['server.ts', 'user.ts', 'define.ts', 'synonym.ts', 'antonym.ts'];
+const commandsPath = path.join(__dirname, 'commands');
+const commandFiles = fs.readdirSync(commandsPath).filter((file: any) => file.endsWith('.js') || file.endsWith('.ts'));
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     commands.push(command.data.toJSON());
