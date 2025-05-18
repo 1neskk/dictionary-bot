@@ -17,7 +17,7 @@ export async function execute(interaction: any) {
         if (!response.ok) {
             throw new Error("Word not found");
         }
-        const data = await response.json();
+        const data: any = await response.json();
         const synonyms = data[0].meanings[0].synonyms || ["No synonyms available"];
 
         const embed = new EmbedBuilder()

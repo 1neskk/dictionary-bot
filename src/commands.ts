@@ -3,24 +3,24 @@ require('dotenv').config();
 
 const token = process.env.TOKEN;
 const clientId = process.env.CLIENT_ID;
-const guildId = process.env.GUILD_ID;
+//const guildId = process.env.GUILD_ID;
 
 const commands = [];
 
-const commandFiles = ['server.js', 'user.js', 'define.js', 'synonym.js', 'antonym.js'];
+const commandFiles = ['server.ts', 'user.ts', 'define.ts', 'synonym.ts', 'antonym.ts'];
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     commands.push(command.data.toJSON());
 }
 
-const rest = new REST().setToken(token);
+const rest = new REST().setToken(token as string);
 (async () => {
     try {
         console.log('Started refreshing application (/) commands.');
 
         await rest.put(
-            //Routes.applicationCommands(clientId),
-            Routes.applicationGuildCommands(clientId, guildId),
+            Routes.applicationCommands(clientId as string),
+            //Routes.applicationGuildCommands(clientId as string, guildId as string),
             { body: commands },
         );
 

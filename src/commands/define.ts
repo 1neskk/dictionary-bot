@@ -17,8 +17,8 @@ export async function execute(interaction: any) {
         if (!response.ok) {
             throw new Error("Word not found");
         }
-        const data = await response.json();
-        const phoneticText = data[0].phonetics.find(p => p.text)?.text || "No phonetic available";
+        const data: any = await response.json();
+        const phoneticText = data[0].phonetics.find((p: any) => p.text)?.text || "No phonetic available";
 
         const embed = new EmbedBuilder()
             .setColor(0x0099FF)
